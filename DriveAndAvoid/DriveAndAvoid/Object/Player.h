@@ -23,7 +23,7 @@ public:
 
 	void Initialize();		//初期化処理
 	void Update();			//更新処理
-	void Drow();			//描画処理
+	void Draw();			//描画処理
 	void Finalize();		//終了時処理
 
 public:
@@ -36,5 +36,9 @@ public:
 	float GetHp() const;		//体力取得
 	int GetBarriarCount() const;	//バリアの枚数取得
 	bool IsBarrier() const;			//バリア有効か？を取得
+
+private:
+	void Movement();		//移動処理
+	void Acceleration();	//加速処理
 };
 

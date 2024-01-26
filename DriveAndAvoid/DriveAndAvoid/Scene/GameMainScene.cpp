@@ -95,7 +95,7 @@ eSceneType GameMainScene::Update()
 			//画面外に行ったら、敵を消去してスコア加算
 			if (enemy[i]->GetLocation().y >= 640.0f)
 			{
-				enemy_count[enemy[i]->GetType]++;
+				enemy_count[enemy[i]->GetType()]++;
 				enemy[i]->Finalize();
 				delete enemy[i];
 				enemy[i] = nullptr;
@@ -104,7 +104,7 @@ eSceneType GameMainScene::Update()
 			//当たり判定の確認
 			if (IsHitCheck(player, enemy[i]))
 			{
-				palyer->SetActive(false);
+				player->SetActive(false);
 				player->DecreaseHp(-50.0f);
 				enemy[i]->Finalize();
 				delete enemy[i];
@@ -240,13 +240,13 @@ void GameMainScene::Finalize()
 }
 
 //現在のシーン情報を取得
-eSceneType GemeMainScene::GetNowScene() const
+eSceneType GameMainScene::GetNowScene() const
 {
 	return eSceneType::E_MAIN;
 }
 
 //ハイスコアの読み込み
-void GemeMainScene::ReadHighScore()
+void GameMainScene::ReadHighScore()
 {
 	RankingData data;
 	data.Initialize();
@@ -272,10 +272,10 @@ bool GameMainScene::IsHitCheck(Player* p, Enemy* e)
 	}
 
 	//位置情報の差分を取得
-	Vector2D diff_locatioon = p->GetLocation() - e->GetLocation();
+	Vector2D diff_location = p->GetLocation() - e->GetLocation();
 
 	//当たり判定サイズの大きさを取得
-	Vector2D box_ex = p->GetBoxSize + e->GetBoxSize();
+	Vector2D box_ex = p->GetBoxSize() + e->GetBoxSize();
 
 	//コリジョンデータより位置情報の差分が小さいなら、ヒット判定とする
 	return((fabsf(diff_location.x) < box_ex.x)&&(fabsf(diff_location.y) <
