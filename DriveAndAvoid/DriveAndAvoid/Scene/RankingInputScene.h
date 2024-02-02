@@ -2,7 +2,7 @@
 #include "SceneBase.h"
 #include "../Object/RankingData.h"
 
-class RankingInputScene
+class RankingInputScene : public SceneBase
 {
 private:
 	int background_image;		//”wŒi‰æ‘œ

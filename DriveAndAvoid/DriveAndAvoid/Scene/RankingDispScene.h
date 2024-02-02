@@ -3,7 +3,7 @@
 #include "SceneBase.h"
 #include "../Object/RankingData.h"
 
-class RankingDispScene
+class RankingDispScene : public SceneBase
 {
 private:
 

@@ -53,6 +53,12 @@ int Enemy::GetType() const
 }
 
 //ˆÊ’uî•ñ‚ğæ“¾
+Vector2D Enemy::GetLocation() const
+{
+	return location;
+}
+
+//ˆÊ’uî•ñ‚ğæ“¾
 Vector2D Enemy::GetBoxSize() const
 {
 	return box_size;

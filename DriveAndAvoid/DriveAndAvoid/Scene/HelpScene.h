@@ -2,7 +2,7 @@
 
 #include "SceneBase.h"
 
-class HelpScene
+class HelpScene : public SceneBase
 {
 private:
 	int background_image;	//”wŒi‰æ‘œ

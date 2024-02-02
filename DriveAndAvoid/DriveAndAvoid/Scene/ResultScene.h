@@ -2,7 +2,7 @@
 #include "SceneBase.h"
 
 
-class ResultScene
+class ResultScene : public SceneBase
 {
 private:
 	int back_ground;	//”wŒi‰æ‘œ
