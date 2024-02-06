@@ -3,7 +3,7 @@
 #include "../Utility/InputControl.h"
 #include "DxLib.h"
 
-ResultScene::ResultScene() :back_ground(NULL), score(0)
+ResultScene::ResultScene():back_ground(NULL), score(0)
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -30,6 +30,10 @@ void ResultScene::Initialize()
 	{
 		throw ("Resource/images/back.bmpがありません\n");
 	}
+	if (result == -1)
+	{
+		throw ("Resource/images/car.bmpがありません\n");
+	}
 	
 	//ゲーム結果の読み込み
 	ReadResultData();
@@ -54,7 +58,7 @@ void ResultScene::Draw() const
 	//背景画像を描画
 	DrawGraph(0, 0, back_ground, TRUE);
 
-	//スコア等を表示領域
+	//スコア等表示領域
 	DrawBox(150, 150, 490, 330, GetColor(0, 153, 0), TRUE);
 	DrawBox(150, 150, 490, 330, GetColor(0, 0, 0), FALSE);
 
@@ -73,8 +77,8 @@ void ResultScene::Draw() const
 			enemy_count[i], (i + 1) * 50, (i + 1) * 50 * enemy_count[i]);
 	}
 
-	DrawString(1180, 290, "スコア", GetColor(0, 0, 0));
-	DrawFormatString(180, 290, 0xFFFFFF, "     =%&d", score);
+	DrawString(180, 290, "スコア", GetColor(0, 0, 0));
+	DrawFormatString(180, 290, 0xFFFFFF, "     =%6d", score);
 
 }
 

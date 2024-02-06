@@ -67,7 +67,7 @@ void RankingDispScene::Finalize()
 	delete ranking;
 }
 
-//原罪のシーン情報を取得
+//現在のシーン情報を取得
 eSceneType RankingDispScene::GetNowScene() const
 {
 	return eSceneType::E_RANKING_DISP;

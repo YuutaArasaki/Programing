@@ -32,12 +32,12 @@ void RankingInputScene::Initialize()
 	//リザルトデータを取得する
 	FILE* fp = nullptr;
 	//ファイルオープン
-	errno_t result = fopen_s(&fp, "Resourse/dat/resultdata.csv", "r");
+	errno_t result = fopen_s(&fp, "Resource/dat/result_data.csv", "r");
 
 	//エラーチェック
 	if (result != 0)
 	{
-		throw ("Resourse/dat/result_result_data.csvが読み込めません\n");
+		throw ("Resource/dat/result_result_data.csvが読み込めません\n");
 	}
 
 	//結果を読み込む

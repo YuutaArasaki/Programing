@@ -27,7 +27,7 @@ void RankingData::Initialize()
 	FILE* fp = nullptr;
 
 	//ファイルオープン
-	errno_t result = fopen_s(&fp, "Resource/dat/ranking_data.cvs", "r");
+	errno_t result = fopen_s(&fp, "Resource/dat/ranking_data.csv", "r");
 
 	//エラーチェック
 	if (result != 0)

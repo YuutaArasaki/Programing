@@ -31,14 +31,14 @@ void Enemy::Initialize()
 void Enemy::Update(float speed)
 {
 	//ˆÊ’uî•ñ‚ÉˆÚ“®—Ê‚ðŒvŽZ‚·‚é
-	location += Vector2D(0.0f, this->speed - 6);
+	location += Vector2D(0.0f, this->speed + speed - 6);
 
 }
 
 void Enemy::Draw() const
 {
 	//“G‰æ‘œ‚Ì•`‰æ
-	DrawRotaGraphF(location.x, location.y, 1.0f, 0.0f, image, TRUE);
+	DrawRotaGraphF(location.x, location.y, 1.0, 0.0, image, TRUE);
 }
 
 void Enemy::Finalize()

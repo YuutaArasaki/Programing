@@ -48,7 +48,7 @@ void GameMainScene::Initialize()
 
 	//オブジェクトの生成
 	player = new Player;
-	enemy = new Enemy * [10];
+	enemy = new Enemy* [10];
 
 	//オブジェクトの初期化
 	player->Initialize();
