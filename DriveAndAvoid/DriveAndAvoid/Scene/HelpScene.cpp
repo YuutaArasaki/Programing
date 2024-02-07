@@ -19,7 +19,7 @@ void HelpScene::Initialize()
 	background_image = LoadGraph("Resource/images/Title.bmp");
 
 	//エラーチェック
-	if (background_image = -1)
+	if (background_image == -1)
 	{
 		throw ("Resource/images/Title.bmpがありません\n");
 	}
